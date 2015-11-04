@@ -1,18 +1,21 @@
 (function() {
   var app = angular.module('gemStore', []);
 
+  /*Tab controller*/
   app.controller("TabController", function() {
+    /*Sets default active tab to 1*/
     this.tab = 1;
-
+    /*Checks to see if tab is set to active*/
     this.isSet = function(checkTab) {
       return this.tab === checkTab;
     };
-
+    /*Sets tab to active*/
     this.setTab = function(setTab) {
       this.tab = setTab;
     };
   });
       
+  /*Gallery Controller*/
   app.controller('GalleryController',function() {
     this.current = 0;
     this.setCurrent = function(imageNumber){
@@ -20,11 +23,14 @@
     };
   });
 
+  /*Store Controller*/
   app.controller('StoreController', function() {
+    /*Sets store.products to the gem variable*/
     this.products = gems;
   });
 
-    var gems = [{
+  /*Contains all of the premade details on the gems*/
+  var gems = [{
   name: 'Azurite',
   description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
   shine: 8,
@@ -96,10 +102,11 @@
     }]
   }];
 
+  /*Review controller*/
   app.controller("ReviewController", function(){
-
+    /*Creates a review object*/
     this.review = {};
-
+    /*Pushes form input for a product review into the review object*/
     this.addReview = function(product){
       product.reviews.push(this.review);
       this.review = {};
