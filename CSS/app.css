@@ -1,0 +1,13 @@
+body {
+	max-width:500px;
+	margin: 0 auto;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+.thumbnail {
+	height: 42px;
+	width: 42px;
+}
